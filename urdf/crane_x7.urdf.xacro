@@ -273,5 +273,9 @@
       joint_7_upper_limit="${JOINT_7_UPPER_LIMIT}"
       joint_hand_lower_limit="${JOINT_HAND_LOWER_LIMIT}"
       joint_hand_upper_limit="${JOINT_HAND_UPPER_LIMIT}" />
+
+    <!-- Add camera sensor for Gazebo -->
+    <xacro:gazebo_camera_sensor parent_link="${NAME_LINK_7}" />
+
   </xacro:if>
 </robot>
