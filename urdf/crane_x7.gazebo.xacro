@@ -172,10 +172,13 @@
     </link>
 
     <!-- Camera joint -->
+    <!-- Camera mounted on gripper, pointing forward/down for hand-eye configuration -->
+    <!-- Offset: Y=0.032 (side), Z=0.0191 (up from gripper base) -->
+    <!-- Orientation: Looking along gripper's approach direction (downward when gripper is down) -->
     <joint name="camera_joint" type="fixed">
       <parent link="${parent_link}"/>
       <child link="camera_link"/>
-      <origin xyz="0.0 0.032 0.0191" rpy="-1.5708 -1.5708 0"/>
+      <origin xyz="0.0 0.032 0.0191" rpy="0 -1.5708 -1.5708"/>
     </joint>
 
     <!-- Camera optical frame -->
@@ -202,6 +205,7 @@
         <visualize>true</visualize>
         <topic>camera/color</topic>
         <enable_metrics>false</enable_metrics>
+        <gz_frame_id>camera_color_optical_frame</gz_frame_id>
         <camera name="camera_color">
           <horizontal_fov>1.211</horizontal_fov>
           <image>
@@ -240,6 +244,7 @@
         <visualize>true</visualize>
         <topic>camera/depth</topic>
         <enable_metrics>false</enable_metrics>
+        <gz_frame_id>camera_depth_optical_frame</gz_frame_id>
         <camera name="camera_depth">
           <horizontal_fov>1.211</horizontal_fov>
           <image>

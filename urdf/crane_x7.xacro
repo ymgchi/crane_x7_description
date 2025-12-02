@@ -176,6 +176,7 @@
           use_nominal_extrinsics="false"
           add_plug="false"
           use_mesh="true">
+        <!-- Default mounting offset for crane_x7 D435 bracket -->
         <origin xyz="0.0 0.032 0.0191" rpy="${radians(-90)} ${radians(-90)} 0"/>
       </xacro:sensor_d435>
     </xacro:if>

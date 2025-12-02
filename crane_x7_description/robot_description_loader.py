@@ -20,8 +20,9 @@ class RobotDescriptionLoader():
         self.manipulator_links_file_path = ''
         self.use_gazebo = 'false'
         self.use_d435 = 'false'
-        self.gz_control_config_package = ''
-        self.gz_control_config_file_path = ''
+        # Default Gazebo control config (used when use_gazebo='true')
+        self.gz_control_config_package = 'crane_x7_control'
+        self.gz_control_config_file_path = 'config/crane_x7_controllers.yaml'
 
     def load(self):
         return Command([
